@@ -22,7 +22,7 @@ springcloud2.* 整合TX-LCN   完成分布式事务的完美融合
 
 2.详情链接:http://www.txlcn.org/zh-cn/docs/principle/control.html
 
-##项目启动说明:
+## 项目启动说明:
 0.创建两个数据库取名为lx_order  lx_stock
 
 1.运行Eureka服务

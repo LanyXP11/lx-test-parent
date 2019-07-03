@@ -1,16 +1,18 @@
 # lx-test-parent
 springcloud2.* 整合TX-LCN   完成分布式事务的完美融合
 
-##项目说明
+## 项目说明
 1.项目模仿了一个典型的电商业务场景,用户在买东西下单的操作，下完订单后端会调用
 订单服务进行订单数据库的记录，同时也会调用库存服务进行商品的减库操作，这一操作可能是有
 订单服务和库存(商品)服务两个服务完成的操作，整个操作要么一起成功要么一起失败，试想
 如果用户在下完单在调用库存服务减库存的操作失败了的话会出现商品多买的操作
 或者在减库存 成功 订单却失败了会造成少买的现象  这些情况是不允许出现的
 本项目就是解决这个状况的
-##LCN简介
+
+## LCN简介
 1.TX-LCN由两大模块组成, TxClient、TxManager，TxClient作为模块的依赖框架，提供TX-LCN的标准支持，TxManager作为分布式事务的控制放。事务发起方或者参与反都由TxClient端来控制。
-###核心步骤
+
+### 核心步骤
 创建事务组
 是指在事务发起方开始执行业务代码之前先调用TxManager创建事务组对象，然后拿到事务标示GroupId的过程。
 加入事务组
@@ -25,6 +27,7 @@ springcloud2.* 整合TX-LCN   完成分布式事务的完美融合
 
 1.运行Eureka服务
 ```
+java
 @SpringBootApplication
    @EnableEurekaServer
    public class EurekaApplication {
@@ -35,6 +38,7 @@ springcloud2.* 整合TX-LCN   完成分布式事务的完美融合
 ```
 2.启动TxManager
 ```
+java
 @SpringBootApplication
 @EnableDiscoveryClient
 public class TxManagerApplication {
@@ -59,7 +63,6 @@ public class OrderApplication extends SpringBootServletInitializer {
         SpringApplication.run(OrderApplication.class, args);
         System.err.println("启动成功");
     }
-
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(OrderApplication.class);
@@ -86,8 +89,8 @@ public class StockApplication extends SpringBootServletInitializer {
     }
 #注意:数据库更改
 ```
-###如何使用LCN
-在项目中添加依赖 本项目是将lcn的代码直接整合到项目中所以只需要在接口的实现中添加相关依赖就ok
+### 如何使用LCN
+在项目中添加依赖 本项目是将lcn的源代码直接整合到项目中所以只需要在接口的实现中添加相关依赖就ok
 lx-test-service模块中添加
 ```java
 <!--TX-CLN分布式事务协调服务支持SpringCloud2.* 未发布版-->
@@ -123,7 +126,7 @@ tm:
    manager: 
         url: http://127.0.0.1:8899/tx/manager/
         
-###地址访问
+### 地址访问
 0.OrderServiceImpl和StockServiceImpl的中的代码:
 ```java
     @GetMapping("/api/order/orderAndStock")

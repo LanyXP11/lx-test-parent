@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-api/lx-test-api-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-api/lx-test-api-stock" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-base" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-base/lx-test-base-springcloud-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-base/lx-test-base-springcloud-zuul" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-lcn" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-plugins-db" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-springcloud" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-service/lx-test-service-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-service/lx-test-service-stock" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/transaction-dubbo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/transaction-motan" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/transaction-springcloud" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/tx-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/tx-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../tx-lcn/tx-plugins-db" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

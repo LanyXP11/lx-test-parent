@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lx-test-api/lx-test-api.iml" filepath="$PROJECT_DIR$/lx-test-api/lx-test-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-api/lx-test-api-order/lx-test-api-order.iml" filepath="$PROJECT_DIR$/lx-test-api/lx-test-api-order/lx-test-api-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-api/lx-test-api-stock/lx-test-api-stock.iml" filepath="$PROJECT_DIR$/lx-test-api/lx-test-api-stock/lx-test-api-stock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-base/lx-test-base.iml" filepath="$PROJECT_DIR$/lx-test-base/lx-test-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-base/lx-test-base-springcloud-eureka/lx-test-base-springcloud-eureka.iml" filepath="$PROJECT_DIR$/lx-test-base/lx-test-base-springcloud-eureka/lx-test-base-springcloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-base/lx-test-base-springcloud-zuul/lx-test-base-springcloud-zuul.iml" filepath="$PROJECT_DIR$/lx-test-base/lx-test-base-springcloud-zuul/lx-test-base-springcloud-zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-common/lx-test-common.iml" filepath="$PROJECT_DIR$/lx-test-common/lx-test-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn.iml" filepath="$PROJECT_DIR$/lx-test-lcn/lx-test-lcn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-client/lx-test-lcn-client.iml" filepath="$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-client/lx-test-lcn-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-manager/lx-test-lcn-manager.iml" filepath="$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-manager/lx-test-lcn-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-plugins-db/lx-test-lcn-plugins-db.iml" filepath="$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-plugins-db/lx-test-lcn-plugins-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-springcloud/lx-test-lcn-springcloud.iml" filepath="$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-springcloud/lx-test-lcn-springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-parent.iml" filepath="$PROJECT_DIR$/lx-test-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-service/lx-test-service.iml" filepath="$PROJECT_DIR$/lx-test-service/lx-test-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-service/lx-test-service-order/lx-test-service-order.iml" filepath="$PROJECT_DIR$/lx-test-service/lx-test-service-order/lx-test-service-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lx-test-service/lx-test-service-stock/lx-test-service-stock.iml" filepath="$PROJECT_DIR$/lx-test-service/lx-test-service-stock/lx-test-service-stock.iml" />
+    </modules>
+  </component>
+</project>

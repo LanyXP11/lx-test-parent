@@ -1,0 +1,32 @@
+###端口号
+server:
+  port: 8010
+###服务名称
+spring:
+    application:
+        name: lx-order
+  #数据库连接信息
+    datasource:
+        name: test
+        url: jdbc:mysql://127.0.0.1:3306/lx_order?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
+        username: root
+        password: root
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+
+###服务注册到eureka地址
+eureka:
+  client:
+    service-url:
+           defaultZone: http://localhost:8080/eureka
+###设置feign客户端超时时间
+ribbon:
+###指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间。
+ ReadTimeout: 100000
+###指的是建立连接后从服务器读取到可用资源所用的时间。 
+ ConnectTimeout: 100000
+#### 当前服务注册lcn tm 事务协调中
+tm: 
+  manager: 
+     url: http://127.0.0.1:8899/tx/manager/
+

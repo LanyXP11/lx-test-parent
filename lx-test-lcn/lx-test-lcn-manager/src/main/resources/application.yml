@@ -1,0 +1,48 @@
+###eureka注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    prefer-ip-address: true
+
+###端口号
+server:
+  port: 8899
+
+spring:
+  application:
+    name: tx-manager
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+  #redis logging.config
+  redis:
+    host: 192.168.37.132
+    port: 6379
+    jedis:
+      pool:
+        max-active: 10
+        max-idle: 10
+        max-wait: -1
+        min-idle: 0
+
+
+
+    timeout: 20000
+
+
+tm:
+  transaction:
+    netty:
+      delaytime: 15 #Tx-Client模块与TxManager模块之间的最大通讯时间，超过该时间未响应本次请求失败
+      hearttime: 15 #业务模块与TxManager之间通讯的心跳时间（单位：秒)
+  socket:
+    port: 9999    # socket server Socket对外服务端口 TxManager的LCN协议的端口
+    maxconnection: 100
+  compensate:
+    auto: true
+    notifyUrl: http://s3.zhubanxian.com/compernstate?action=notify
+    tryTime: 30
+    maxWaitTime: 10000

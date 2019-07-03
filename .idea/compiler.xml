@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lx-test-api-order" />
+        <module name="lx-test-api-stock" />
+        <module name="lx-test-base-springcloud-eureka" />
+        <module name="lx-test-base-springcloud-zuul" />
+        <module name="lx-test-base、lx-test-base-springcloud-eureka" />
+        <module name="lx-test-cln-client" />
+        <module name="lx-test-common" />
+        <module name="lx-test-lcn-client" />
+        <module name="lx-test-lcn-manager" />
+        <module name="lx-test-lcn-plugins-db" />
+        <module name="lx-test-lcn-springcloud" />
+        <module name="lx-test-service-order" />
+        <module name="lx-test-service-stock" />
+        <module name="lx-test-springcloud-zuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="lx-test-api" target="1.8" />
+      <module name="lx-test-api-order" target="1.8" />
+      <module name="lx-test-api-stock" target="1.8" />
+      <module name="lx-test-base" target="1.8" />
+      <module name="lx-test-base-springcloud-eureka" target="1.8" />
+      <module name="lx-test-base-springcloud-zuul" target="1.8" />
+      <module name="lx-test-cln-client" target="1.8" />
+      <module name="lx-test-common" target="1.8" />
+      <module name="lx-test-lcn" target="1.8" />
+      <module name="lx-test-lcn-client" target="1.8" />
+      <module name="lx-test-lcn-manager" target="1.8" />
+      <module name="lx-test-lcn-plugins-db" target="1.8" />
+      <module name="lx-test-lcn-springcloud" target="1.8" />
+      <module name="lx-test-parent" target="1.8" />
+      <module name="lx-test-service" target="1.8" />
+      <module name="lx-test-service-order" target="1.8" />
+      <module name="lx-test-service-stock" target="1.8" />
+      <module name="transaction-dubbo" target="1.8" />
+      <module name="transaction-motan" target="1.8" />
+      <module name="transaction-springcloud" target="1.8" />
+      <module name="tx-client" target="1.8" />
+      <module name="tx-lcn" target="1.8" />
+      <module name="tx-manager" target="1.8" />
+      <module name="tx-plugins-db" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

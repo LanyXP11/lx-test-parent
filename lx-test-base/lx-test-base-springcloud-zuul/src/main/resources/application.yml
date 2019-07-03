@@ -1,0 +1,21 @@
+###eureka注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/eureka/
+###网关端口号80
+server:
+  port: 80
+###网关名称
+spring:
+  application:
+    name: service-zuul
+### 配置网关反向代理    
+zuul:
+  routes:
+    api-a:
+      path: /lx-member/**
+      serviceId: lx-member
+    api-b:
+      path: /lx-order/**
+      serviceId: lx-order

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- 控制台打印日志的相关配置 -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 日志格式 -->
+        <encoder>
+            <pattern>%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n</pattern>
+        </encoder>
+        <!-- 比较日志记录请求的Level值和ThresholdFilter中配置的Level值，当日志记录请求的Level值小于ThresholdFilter中配置的Level值，日志记录请求被判定为无效。 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+
+    <appender name="INFO-OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>logs/lcn.log</file>
+
+        <!-- 比较日志记录请求的Level值和ThresholdFilter中配置的Level值，当日志记录请求的Level值小于ThresholdFilter中配置的Level值，日志记录请求被判定为无效。 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>logs/zuul.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>500</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>200MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>@@ | %date | %-4relative | [%thread] | %-5level | %logger{35} | -%msg %n</pattern>
+        </encoder>
+
+    </appender>
+
+    <appender name="ERROR-OUT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>logs/lcn_error.log</file>
+
+        <!-- 日志级别过滤器 -->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!-- 过滤的级别 -->
+            <level>ERROR</level>
+            <!-- 匹配时的操作：接收（记录） -->
+            <onMatch>ACCEPT</onMatch>
+            <!-- 不匹配时的操作：拒绝（不记录） -->
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>logs/lcn_error.%i.log.zip</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>100</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>1MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>@@ | %date | %-4relative | [%thread] | %-5level | %logger{35} | -%msg %n</pattern>
+        </encoder>
+
+    </appender>
+
+    <!--logback.LogbackDemo：类的全路径 -->
+    <!--   <logger name="com.link" level="INFO" additivity="false">
+            <appender-ref ref="STDOUT"/>
+          <appender-ref ref="INFO-OUT"/>
+          <appender-ref ref="ERROR-OUT" />
+      </logger>  -->
+
+    <logger name="org.springframework.web" level="DEBUG"/>   <!-- spring web 包下的 logger, 只输出 INFO 级别的 -->
+    <logger name="org.springframework.boot.web.filter" level="DEBUG"/>
+
+    <logger name="com.ibatis" level="DEBUG"/>
+    <logger name="com.codingapi.tm" level="DEBUG"/>
+
+    <!-- 基于debug处理日志：具体控制台或者文件对日志级别的处理还要看所在appender配置的filter，如果没有配置filter，则使用root配置 -->
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="INFO-OUT"/>
+        <appender-ref ref="ERROR-OUT"/>
+    </root>
+</configuration>

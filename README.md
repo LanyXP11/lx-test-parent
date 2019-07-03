@@ -28,12 +28,12 @@ springcloud2.* 整合TX-LCN   完成分布式事务的完美融合
 1.运行Eureka服务
 ```java
 @SpringBootApplication
-   @EnableEurekaServer
-   public class EurekaApplication {
-       public static void main(String[] args) {
-           SpringApplication.run(EurekaApplication.class, args);
-           System.err.println("启动成功");
-       }
+@EnableEurekaServer
+public class EurekaApplication {
+   public static void main(String[] args) {
+       SpringApplication.run(EurekaApplication.class, args);
+       System.err.println("启动成功");
+   }
 ```
 2.启动TxManager
 ```java
@@ -127,58 +127,58 @@ tm:
 ### 地址访问
 0.OrderServiceImpl和StockServiceImpl的中的代码:
 ```java
-    @GetMapping("/api/order/orderAndStock")
-    @Transactional//开启本地事务
-    @TxTransaction(isStart = true)//使用分布式全局事务 事务的发起方是订单服务
-    public LxResponse OrderAndStock(@RequestParam("num") String num) {
-        if (StringUtils.isBlank(num)) {
-            return new LxResponse().setError("NUM不允许为空");
-        }
-        OrderEntity entity = new OrderEntity();
-        entity.setCommodityId(30l);
-        entity.setName("恭喜您下单了");
-        entity.setOrderCreatetime(new Date());
-        entity.setOrderMoney(300d);
-        entity.setOrderState(0);
-        //往订单表中添加一条记录
-        int i = orderMapper.addOrder(entity);
-        if (i < 0) {
-            throw new MessageException(9010, "下单失败");
-        }
-        //调用库存服务对商品进行减库存操作
-        LxResponse lxResponse = stockFeign.inventoryReduction(30l);
-        if (checkResultResponse(lxResponse)) {
-            throw new MessageException(lxResponse.getError().getCode(), lxResponse.getError().getMessage());
-        }
-        //制造异常
-        Long result = 1 / Long.valueOf(num);
-        lxResponse = new LxResponse();
+@GetMapping("/api/order/orderAndStock")
+@Transactional//开启本地事务
+@TxTransaction(isStart = true)//使用分布式全局事务 事务的发起方是订单服务
+public LxResponse OrderAndStock(@RequestParam("num") String num) {
+    if (StringUtils.isBlank(num)) {
+        return new LxResponse().setError("NUM不允许为空");
+    }
+    OrderEntity entity = new OrderEntity();
+    entity.setCommodityId(30l);
+    entity.setName("恭喜您下单了");
+    entity.setOrderCreatetime(new Date());
+    entity.setOrderMoney(300d);
+    entity.setOrderState(0);
+    //往订单表中添加一条记录
+    int i = orderMapper.addOrder(entity);
+    if (i < 0) {
+        throw new MessageException(9010, "下单失败");
+    }
+    //调用库存服务对商品进行减库存操作
+    LxResponse lxResponse = stockFeign.inventoryReduction(30l);
+    if (checkResultResponse(lxResponse)) {
+        throw new MessageException(lxResponse.getError().getCode(), lxResponse.getError().getMessage());
+    }
+    //制造异常
+    Long result = 1 / Long.valueOf(num);
+    lxResponse = new LxResponse();
 
-        lxResponse.setData("下单成功");
+    lxResponse.setData("下单成功");
 
-        log.info("调用订单服务最终返回值是:[{}]", JSON.toJSONString(lxResponse));
-        return lxResponse;
+    log.info("调用订单服务最终返回值是:[{}]", JSON.toJSONString(lxResponse));
+    return lxResponse;
         
-            @TxTransaction//使用分布式全局事务
-            @Transactional//本地事务
-            @RequestMapping("/api/stock/inventoryReduction")
-            public LxResponse inventoryReduction(@RequestParam("commodityId") Long commodityId) {
-                if (commodityId == null) {
-                    return new LxResponse().setError("商品ID不允许为空");
-                }
-                StockEntity stockEntity = stockMapper.selectStock(commodityId);
-                if (stockEntity == null) {
-                    return new LxResponse().setError("商品ID不存在");
-                }
-                if (stockEntity.getStock() <= 0) {
-                    return new LxResponse().setError("当前商品已经买完啦!");
-                }
-                int updateStockResult = stockMapper.updateStock(commodityId);
-                if (updateStockResult <= 0) {
-                    return new LxResponse().setError("修改库存失败!");
-                }
-                return new LxResponse().setData("修改库存成功!");
-            }
+    @TxTransaction//使用分布式全局事务
+    @Transactional//本地事务
+    @RequestMapping("/api/stock/inventoryReduction")
+    public LxResponse inventoryReduction(@RequestParam("commodityId") Long commodityId) {
+        if (commodityId == null) {
+            return new LxResponse().setError("商品ID不允许为空");
+        }
+        StockEntity stockEntity = stockMapper.selectStock(commodityId);
+        if (stockEntity == null) {
+            return new LxResponse().setError("商品ID不存在");
+        }
+        if (stockEntity.getStock() <= 0) {
+            return new LxResponse().setError("当前商品已经买完啦!");
+        }
+        int updateStockResult = stockMapper.updateStock(commodityId);
+        if (updateStockResult <= 0) {
+            return new LxResponse().setError("修改库存失败!");
+        }
+        return new LxResponse().setData("修改库存成功!");
+    }
         
 ```
 1.访问路径:127.0.0.1:8010/api/order/orderAndStock?num=1

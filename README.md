@@ -26,8 +26,7 @@ springcloud2.* 整合TX-LCN   完成分布式事务的完美融合
 0.创建两个数据库取名为lx_order  lx_stock
 
 1.运行Eureka服务
-```
-java
+```java
 @SpringBootApplication
    @EnableEurekaServer
    public class EurekaApplication {
@@ -37,8 +36,7 @@ java
        }
 ```
 2.启动TxManager
-```
-java
+```java
 @SpringBootApplication
 @EnableDiscoveryClient
 public class TxManagerApplication {

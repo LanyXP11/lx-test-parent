@@ -9,6 +9,7 @@ import com.lx.common.constant.LxResponse;
 import com.lx.common.exception.MessageException;
 import com.lx.service.feign.StockFeign;
 import com.lx.service.mapper.OrderMapper;
+import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,6 @@ import java.util.Date;
 @Slf4j
 @SuppressWarnings("all")
 public class OrderServiceImpl implements OrderServiceApi, ITxTransaction {
-
     @Autowired
     private StockFeign stockFeign;
     @Autowired

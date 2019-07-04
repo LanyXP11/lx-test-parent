@@ -22,7 +22,7 @@
         </filter>
 
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>logs/zuul.%i.log.zip</fileNamePattern>
+            <fileNamePattern>logs/lcn.%i.log.zip</fileNamePattern>
             <minIndex>1</minIndex>
             <maxIndex>500</maxIndex>
         </rollingPolicy>

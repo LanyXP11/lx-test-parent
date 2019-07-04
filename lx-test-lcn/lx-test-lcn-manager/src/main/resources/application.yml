@@ -27,12 +27,7 @@ spring:
         max-idle: 10
         max-wait: -1
         min-idle: 0
-
-
-
     timeout: 20000
-
-
 tm:
   transaction:
     netty:

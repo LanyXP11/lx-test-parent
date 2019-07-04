@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="zuul">
+    <output-path>$PROJECT_DIR$/out/artifacts/zuul</output-path>
+    <root id="archive" name="zuul.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/lx-test-base/lx-test-base-springcloud-zuul/src/main/java/com/lx/zuul/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

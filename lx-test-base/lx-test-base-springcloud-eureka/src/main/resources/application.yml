@@ -1,7 +1,11 @@
 
 server:
   port: 8080
-
+  undertow:
+        buffer-size: 1024
+        direct-buffers: true
+        io-threads: 12
+        worker-threads: 256
 eureka:
   instance:
 
@@ -11,3 +15,5 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     register-with-eureka: false
     fetch-registry: false
+
+

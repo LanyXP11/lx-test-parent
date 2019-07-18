@@ -17,6 +17,7 @@
         <module name="lx-test-lcn-manager" />
         <module name="lx-test-lcn-plugins-db" />
         <module name="lx-test-lcn-springcloud" />
+        <module name="lx-test-ribbo-order" />
         <module name="lx-test-service-order" />
         <module name="lx-test-service-stock" />
         <module name="lx-test-springcloud-zuul" />
@@ -37,6 +38,8 @@
       <module name="lx-test-lcn-plugins-db" target="1.8" />
       <module name="lx-test-lcn-springcloud" target="1.8" />
       <module name="lx-test-parent" target="1.8" />
+      <module name="lx-test-ribbo-order" target="1.8" />
+      <module name="lx-test-ribbon" target="1.8" />
       <module name="lx-test-service" target="1.8" />
       <module name="lx-test-service-order" target="1.8" />
       <module name="lx-test-service-stock" target="1.8" />

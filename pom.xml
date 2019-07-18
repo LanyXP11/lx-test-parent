@@ -18,6 +18,7 @@
         <module>lx-test-api</module>
         <module>lx-test-service</module>
         <module>lx-test-lcn</module>
+        <module>llx-test-ribbon</module>
     </modules>
     <dependencyManagement>
         <dependencies>

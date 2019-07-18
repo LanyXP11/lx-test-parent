@@ -14,6 +14,8 @@
     <file url="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-manager" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-plugins-db" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lx-test-lcn/lx-test-lcn-springcloud" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-ribbon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lx-test-ribbon/lx-test-ribbo-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lx-test-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lx-test-service/lx-test-service-order" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lx-test-service/lx-test-service-stock" charset="UTF-8" />

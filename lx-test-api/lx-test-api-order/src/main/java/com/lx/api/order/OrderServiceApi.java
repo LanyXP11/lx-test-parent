@@ -23,4 +23,11 @@ public interface OrderServiceApi {
     @GetMapping("/api/order/orderAndStock")
     LxResponse OrderAndStock(@RequestParam("num") String num);
 
+    /**
+     *
+     * @param orderId
+     * @return
+     */
+    LxResponse OrderTest(@RequestParam("orderId") String orderId);
+
 }

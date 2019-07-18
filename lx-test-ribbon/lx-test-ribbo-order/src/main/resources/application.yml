@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: client-order-ribbon
+server:
+  port: 8019
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+

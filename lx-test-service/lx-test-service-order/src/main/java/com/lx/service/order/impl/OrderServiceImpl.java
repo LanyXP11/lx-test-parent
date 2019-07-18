@@ -65,6 +65,13 @@ public class OrderServiceImpl implements OrderServiceApi, ITxTransaction {
         return lxResponse;
     }
 
+    @GetMapping("/api/order/OrderTest")
+    public LxResponse OrderTest(@RequestParam("orderId") String orderId) {
+        LxResponse respon = new LxResponse();
+        respon.setData("test sueccess " + orderId);
+        return respon;
+    }
+
     protected Boolean checkResultResponse(LxResponse response) {
         return null != response && true == response.isSuccess() && null != response.getData();
     }
